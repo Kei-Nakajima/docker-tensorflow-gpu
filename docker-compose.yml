@@ -1,0 +1,11 @@
+version: "3"
+services:
+    tensorflow_keras:
+        build:
+          dockerfile: Dockerfile
+        ports:
+          - "8888:8888"
+          - "6006:6006"
+        volumes:
+          - .:/usr/src/app
+        runtime: nvidia
