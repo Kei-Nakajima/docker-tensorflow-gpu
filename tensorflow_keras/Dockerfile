@@ -38,6 +38,7 @@ COPY requirements.txt /tmp
 RUN pip3 install --upgrade pip
 RUN pip3 install -r /tmp/requirements.txt
 RUN python --version
+RUN jupyter serverextension enable --py jupyterlab
 RUN python -m ipykernel.kernelspec
 
 COPY . /usr/src/app
