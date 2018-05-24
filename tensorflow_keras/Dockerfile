@@ -35,6 +35,7 @@ WORKDIR /usr/src/app
 
 # pip install
 COPY requirements.txt /tmp
+RUN pip3 install --upgrade pip
 RUN pip3 install -r /tmp/requirements.txt
 RUN python --version
 RUN python -m ipykernel.kernelspec
