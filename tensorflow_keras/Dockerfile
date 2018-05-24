@@ -59,7 +59,7 @@ ENV NB_UID 1000
 ENV NB_GID 1000
 
 # user name
-USER $NB_USE
+USER $NB_USER
 
 # Set up Jupyter Notebook config
 ENV CONFIG /root/.jupyter/jupyter_notebook_config.py
