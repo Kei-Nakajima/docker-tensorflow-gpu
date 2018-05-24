@@ -33,6 +33,15 @@ RUN apt-get clean && \
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+# setup Python3.6
+WORKDIR /tmp
+RUN wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz \
+        && tar zxf Python-3.6.5.tgz \
+        && cd Python-3.6.5 \
+        && ./configure \
+        && make altinstall
+ENV PYTHONIOENCODING "utf-8"
+
 # pip install
 COPY requirements.txt /tmp
 RUN pip3 install --upgrade pip
