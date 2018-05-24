@@ -9,5 +9,4 @@ services:
       - "6006:6006"
     volumes:
       - .:/usr/src/app
-    image: nvidia/cuda
     runtime: nvidia
