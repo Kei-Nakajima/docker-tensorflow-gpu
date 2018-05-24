@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     liblapack-dev \
     libatlas-base-dev \
     mecab \
-    mecab-naist-utf8 \
+    mecab-naist-jdic \
     libmecab-dev \
     gfortran \
     libav-tools \

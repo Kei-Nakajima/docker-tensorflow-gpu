@@ -13,7 +13,6 @@ services:
       - /dev/nvidiactl
       - /dev/nvidia-uvm
       - /dev/nvidia0
-    runtime: nvidia
 volumes:
   nvidia_driver_390.48:
     external: true
