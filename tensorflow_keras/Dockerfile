@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     gcc \
     zlib1g-dev \
+    ssh \
     openssl \
     libssl-dev \
     libbz2-dev \
@@ -52,6 +53,13 @@ RUN python3 -m ipykernel.kernelspec
 
 COPY . /usr/src/app
 
+# user settings
+ENV NB_USER kei
+ENV NB_UID 1000
+ENV NB_GID 1000
+
+# user name
+USER $NB_USE
 
 # Set up Jupyter Notebook config
 ENV CONFIG /root/.jupyter/jupyter_notebook_config.py

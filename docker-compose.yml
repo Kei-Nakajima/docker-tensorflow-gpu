@@ -1,4 +1,4 @@
-version: '3.6'
+version: '2.3'
 services:
   tensorflow_keras:
     build:
@@ -7,5 +7,6 @@ services:
     ports:
       - "8888:8888"
       - "6006:6006"
+      - "22:22"
     runtime: nvidia
     command: /bin/bash
