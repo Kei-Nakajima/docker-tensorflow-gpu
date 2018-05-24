@@ -30,9 +30,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
 # setup Python3.6
 WORKDIR /tmp
 RUN wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz \
@@ -42,13 +39,16 @@ RUN wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz \
         && make altinstall
 ENV PYTHONIOENCODING "utf-8"
 
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
 # pip install
 COPY requirements.txt /tmp
 RUN pip3 install --upgrade pip
 RUN pip3 install -r /tmp/requirements.txt
-RUN python --version
+RUN python3 --version
 RUN jupyter serverextension enable --py jupyterlab
-RUN python -m ipykernel.kernelspec
+RUN python3 -m ipykernel.kernelspec
 
 COPY . /usr/src/app
 

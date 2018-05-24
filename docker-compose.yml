@@ -7,12 +7,5 @@ services:
     ports:
       - "8888:8888"
       - "6006:6006"
-    volumes:
-      - nvidia_driver_390.48:/usr/local/nvidia:ro
-    devices:
-      - /dev/nvidiactl
-      - /dev/nvidia-uvm
-      - /dev/nvidia0
-volumes:
-  nvidia_driver_390.48:
-    external: true
+    runtime: nvidia
+    command: /bin/bash
