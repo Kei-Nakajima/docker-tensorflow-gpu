@@ -35,8 +35,8 @@ WORKDIR /usr/src/app
 
 # pip install
 COPY requirements.txt /tmp
-RUN pip3.6 install -r /tmp/requirements.txt
-RUN python3.6 --version
+RUN pip3 install -r /tmp/requirements.txt
+RUN python --version
 RUN python -m ipykernel.kernelspec
 
 COPY . /usr/src/app
