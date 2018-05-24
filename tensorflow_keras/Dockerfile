@@ -1,5 +1,5 @@
 # NVIDIA-GPU
-FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
+FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
 LABEL maintainer “NVIDIA CORPORATION <cudatools@nvidia.com>”
 
 # Install dependencies
@@ -15,12 +15,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libsqlite3-dev \
     libmecab-dev \
     libblas-dev \
-	liblapack-dev\
+    liblapack-dev \
     libatlas-base-dev \
     mecab \
     mecab-naist-utf8 \
     libmecab-dev \
-	gfortran \
+    gfortran \
     libav-tools \
     python3-dev \
     python3-pip \
