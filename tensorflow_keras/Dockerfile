@@ -75,8 +75,8 @@ RUN echo "c.NotebookApp.ip = '*'" >>${CONFIG} && \
 
 RUN echo "c.InteractiveShellApp.exec_lines = ['%matplotlib inline']" >>${CONFIG_IPYTHON} 
 
-# port
-EXPOSE 8888 6006 
+#PORT
+EXPOSE 8888 6006
 
 VOLUME /notebooks
 
